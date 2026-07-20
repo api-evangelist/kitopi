@@ -1,0 +1,38 @@
+generated: '2026-07-19'
+method: searched
+source: https://www.kitopi.com/llms.txt
+docs: https://dev.wix.com/docs/develop-websites/articles/get-started/about-the-wix-site-mcp
+notes: >-
+  Kitopi publishes no OpenAPI and no developer API, so there are no securitySchemes to derive from.
+  The only reachable programmatic surface is the Wix site MCP endpoint, whose auth model is
+  documented in Kitopi's own llms.txt and verified by live probe: connecting requires no
+  credentials, and acting on a visitor's behalf requires an anonymous visitor token minted by the
+  server itself.
+summary:
+  types:
+  - none
+  - bearer-visitor-token
+  api_key_in: []
+  oauth2_flows: []
+schemes:
+- name: mcp-anonymous
+  type: none
+  applies_to: https://www.kitopi.com/_api/mcp
+  description: >-
+    No authentication is required to connect to the MCP endpoint or to list and call the read-only
+    tools. Only public site information is exposed.
+  source: https://www.kitopi.com/llms.txt
+- name: wix-visitor-token
+  type: http
+  scheme: bearer
+  applies_to: CallWixSiteAPI, ExecuteWixAPI
+  description: >-
+    An anonymous visitor access token, minted on demand by the GenerateVisitorToken tool, is
+    required before any call that acts on a visitor's behalf. There is no user account, API key or
+    OAuth client involved; the token represents an unauthenticated site visitor session.
+  source: https://www.kitopi.com/llms.txt
+session:
+  header: mcp-session-id
+  description: >-
+    The MCP server issues an mcp-session-id response header on initialize which must be echoed on
+    subsequent JSON-RPC requests. Observed by live probe on 2026-07-19.

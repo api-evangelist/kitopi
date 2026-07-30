@@ -1,8 +1,28 @@
 aid: kitopi
 name: Kitopi
-description: 'Kitopi is a company surfaced as a portfolio company of softbank-vision-fund and added to
-  the API Evangelist network as a stub for enrichment. Sector: consumer. This profile is a lead awaiting
-  the enrichment pipeline.'
+description: 'Kitopi is a Dubai-headquartered, tech-powered multi-brand restaurant and cloud kitchen
+  platform that discovers, creates and curates homegrown F&B brands for the MENA region. It operates
+  over 200 restaurant and delivery-only outlets across the UAE, Saudi Arabia, Bahrain, Qatar and Kuwait
+  with more than 6,000 employees, and runs a Global Customer Experience center in Dubai plus a 100-plus
+  person technology hub in Krakow, Poland. Kitopi''s differentiator is its in-house Smart Kitchen
+  Operating System (SKOS), a suite of applications that optimizes every aspect of cloud-kitchen
+  operations in real time to maximize throughput and utilization for its restaurant partners, letting
+  a brand scale into a new market in roughly 14 days. Kitopi is a SoftBank Vision Fund portfolio
+  company. It publishes no public product or partner developer API; its only machine-readable surface
+  is a Wix-provided site MCP endpoint and an llms.txt agent-access declaration on www.kitopi.com.'
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://static.wixstatic.com/media/eef487_23715ab360904fa2b3be013b50cad3d3%7Emv2.jpg/v1/fit/w_2500,h_1330,al_c/eef487_23715ab360904fa2b3be013b50cad3d3%7Emv2.jpg
 url: https://raw.githubusercontent.com/api-evangelist/kitopi/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -12,13 +32,99 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-19'
 tags:
 - Company
 - Consumer
-apis: []
+- Food and Beverage
+- Cloud Kitchens
+- Restaurants
+- Food Delivery
+- Hospitality
+- Middle East
+- Logistics
+apis:
+- aid: kitopi:site-mcp
+  name: Kitopi Site MCP
+  description: 'The Model Context Protocol endpoint that Kitopi''s Wix-hosted website exposes for
+    agentic AI access. It is a platform-provided (Wix) site assistant server rather than a Kitopi
+    product API: it lets an agent retrieve live site content, look up business details, search the
+    site, mint an anonymous visitor token, and call the site''s underlying Wix REST APIs on a
+    visitor''s behalf. No authentication is required to connect and only public site information is
+    reachable.'
+  humanURL: https://www.kitopi.com/llms.txt
+  baseURL: https://www.kitopi.com/_api/mcp
+  tags:
+  - MCP
+  - Agents
+  - Website
+  properties:
+  - type: MCPServer
+    url: mcp/kitopi-mcp.yml
+  - type: LLMsTxt
+    url: llms/kitopi-llms.txt
+common:
+- type: DomainSecurity
+  url: security/kitopi-domain-security.yml
+- type: Website
+  url: https://www.kitopi.com/
+- type: Documentation
+  url: https://dev.wix.com/docs/develop-websites/articles/get-started/about-the-wix-site-mcp
+- type: Blog
+  url: https://www.kitopi.com/blog
+- type: BlogRSS
+  url: https://www.kitopi.com/blog-feed.xml
+- type: Newsroom
+  url: https://www.kitopi.com/newsroom
+- type: About
+  url: https://www.kitopi.com/our-story
+- type: Technology
+  url: https://www.kitopi.com/tech
+- type: Careers
+  url: https://www.kitopi.com/careers
+- type: JobBoard
+  url: https://jobs.lever.co/kitopi/
+- type: Partners
+  url: https://www.kitopi.com/franchise
+- type: Products
+  url: https://www.kitopi.com/brands
+- type: Leadership
+  url: https://www.kitopi.com/leadership
+- type: Support
+  url: mailto:info@kitopi.com
+- type: TermsOfService
+  url: https://www.kitopi.com/terms-conditions
+- type: PrivacyPolicy
+  url: https://www.kitopi.com/privacy-policy
+- type: LinkedIn
+  url: https://www.linkedin.com/company/kitopi/
+- type: Twitter
+  url: https://twitter.com/kitopihq
+- type: Instagram
+  url: https://www.instagram.com/thisiskitopi/
+- type: MCPServer
+  url: mcp/kitopi-mcp.yml
+- type: LLMsTxt
+  url: llms/kitopi-llms.txt
+- type: WellKnown
+  url: well-known/kitopi-well-known.yml
+- type: Conventions
+  url: conventions/kitopi-conventions.yml
+- type: Authentication
+  url: authentication/kitopi-authentication.yml
+- type: Conformance
+  url: conformance/kitopi-conformance.yml
+- type: Lifecycle
+  url: lifecycle/kitopi-lifecycle.yml
+- type: AgentSkill
+  url: skills/_index.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence

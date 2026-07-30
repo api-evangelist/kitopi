@@ -1,0 +1,58 @@
+generated: '2026-07-19'
+method: searched
+source: https://www.kitopi.com/llms.txt
+notes: >-
+  Kitopi has no REST developer API, so most conventional facets (pagination, expansion, sparse
+  fields, versioning trains, error envelopes) have no published contract. What is recorded here is
+  the real, verified interaction contract of the one programmatic surface Kitopi exposes: the MCP
+  endpoint at https://www.kitopi.com/_api/mcp. Absence is recorded honestly rather than inferred.
+protocol:
+  name: Model Context Protocol
+  version: '2025-06-18'
+  transport: HTTP POST, JSON-RPC 2.0
+  endpoint: https://www.kitopi.com/_api/mcp
+  content_type: application/json
+  accept: application/json, text/event-stream
+authentication:
+  style: none to connect; anonymous bearer visitor token to act
+  artifact: authentication/kitopi-authentication.yml
+session:
+  supported: true
+  header: mcp-session-id
+  issued_on: initialize
+  description: Server-issued session id returned on initialize and echoed on subsequent requests.
+idempotency:
+  supported: false
+  evidence: >-
+    No idempotency key header or parameter is documented or observed on the MCP endpoint, and there
+    is no REST API surface that could carry one. Recorded as absent.
+pagination:
+  supported: unknown
+  evidence: No paginated collection endpoints are published by Kitopi.
+versioning:
+  scheme: protocol-version
+  current: '2025-06-18'
+  description: >-
+    The surface is versioned by the negotiated MCP protocolVersion on initialize, not by a Kitopi
+    API version. Kitopi publishes no API versioning policy.
+error_envelope:
+  format: jsonrpc-2.0
+  description: >-
+    Errors follow the JSON-RPC 2.0 error object shape (code, message, data). No RFC 9457
+    problem+json surface exists.
+  artifact: errors/ not present - no documented error catalog
+rate_limiting:
+  documented: false
+  evidence: No rate limit headers or published limits were observed or documented.
+tool_discovery:
+  method: tools/list
+  change_notification: >-
+    The server advertises capabilities.tools.listChanged true and instructs clients to re-issue
+    tools/list upon receiving a tool update notification.
+  source: https://www.kitopi.com/llms.txt
+agent_access:
+  llms_txt: llms/kitopi-llms.txt
+  robots_txt: https://www.kitopi.com/robots.txt
+  crawling_stance: >-
+    robots.txt allows general crawling with PetalBot disallowed and crawl-delay applied to dotbot
+    and AhrefsBot. llms.txt explicitly invites agentic access via MCP as an alternative to scraping.

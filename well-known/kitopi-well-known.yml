@@ -1,0 +1,32 @@
+generated: '2026-07-19'
+method: searched
+host: https://www.kitopi.com
+notes: >-
+  Kitopi's site is hosted on Wix, which returns a generic HTTP 400 error page for any unmatched
+  path rather than a 404. A control probe of an invented path (/zzz-nope-123.txt) returned the same
+  400, confirming that no /.well-known/ document is actually published. /llms.txt and /robots.txt
+  return real, distinct content and are recorded as genuine hits.
+documents:
+- path: /.well-known/security.txt
+  status: 400
+- path: /.well-known/openid-configuration
+  status: 400
+- path: /.well-known/oauth-authorization-server
+  status: 400
+- path: /.well-known/api-catalog
+  status: 400
+- path: /.well-known/ai-plugin.json
+  status: 400
+- path: /llms.txt
+  status: 200
+  file: ../llms/kitopi-llms.txt
+- path: /robots.txt
+  status: 200
+- path: /sitemap.xml
+  status: 200
+- path: /blog-feed.xml
+  status: 200
+control:
+  path: /zzz-nope-123.txt
+  status: 400
+  conclusion: unmatched paths return 400, so 400 means absent

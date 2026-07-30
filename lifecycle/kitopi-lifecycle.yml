@@ -1,0 +1,38 @@
+generated: '2026-07-19'
+method: searched
+source: https://www.kitopi.com/
+notes: >-
+  Kitopi runs no developer program, so there is no API versioning policy, deprecation policy, SLA,
+  status page or changelog to capture. Every field below records a probed absence rather than an
+  assumption. No StatusPage or Deprecation pointer is emitted in apis.yml because neither exists.
+versioning:
+  scheme: protocol-version
+  current: '2025-06-18'
+  applies_to: https://www.kitopi.com/_api/mcp
+  docs: https://www.kitopi.com/llms.txt
+  description: >-
+    The only versioned surface is the MCP protocol version negotiated at initialize. Kitopi
+    publishes no API version scheme of its own.
+deprecation:
+  policy_url: null
+  sunset_header: false
+  evidence: No deprecation or sunset policy is published.
+sla:
+  url: null
+  uptime_target: null
+  evidence: No public SLA is published.
+status_page:
+  url: null
+  evidence: >-
+    status.kitopi.com does not resolve (curl exit 000, no DNS). No status page is linked from the
+    website footer or navigation.
+changelog:
+  url: null
+  evidence: >-
+    No dated developer changelog exists. Company news is published as editorial content at
+    https://www.kitopi.com/newsroom and https://www.kitopi.com/blog (RSS at /blog-feed.xml).
+deprecated_operations: []
+tool_change_signal:
+  supported: true
+  mechanism: MCP capabilities.tools.listChanged with tools/list re-fetch on notification
+  source: https://www.kitopi.com/llms.txt

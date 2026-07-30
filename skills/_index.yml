@@ -1,0 +1,19 @@
+generated: '2026-07-19'
+method: generated
+source: mcp/kitopi-mcp.yml
+notes: >-
+  Kitopi publishes no OpenAPI, so skills are grounded in the MCP tool names enumerated live from
+  https://www.kitopi.com/_api/mcp on 2026-07-19 rather than in operationIds. Every tool referenced
+  below exists verbatim in mcp/kitopi-mcp.yml.
+skills:
+- file: kitopi-site-mcp-lookup.md
+  name: Look up Kitopi business and site information over MCP
+  api: https://www.kitopi.com/_api/mcp
+  artifact: mcp/kitopi-mcp.yml
+  operations:
+  - GetBusinessDetails
+  - SearchInSite
+  - SearchSiteApiDocs
+  - GenerateVisitorToken
+  - CallWixSiteAPI
+  - ReadFullDocsMethodSchema

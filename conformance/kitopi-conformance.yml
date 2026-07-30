@@ -1,0 +1,52 @@
+generated: '2026-07-19'
+method: searched
+source: https://www.kitopi.com/llms.txt
+notes: >-
+  Kitopi publishes no OpenAPI, no OAuth surface and no compliance program page, so nearly every
+  cross-cutting standard is legitimately not applicable. Conformance is asserted only where it was
+  directly verified by live probe of the MCP endpoint or by fetching the published file. No
+  certification (SOC 2, ISO 27001, PCI DSS, HIPAA, FedRAMP) is published anywhere on kitopi.com, so
+  no Compliance pointer is emitted.
+standards:
+- id: model-context-protocol
+  conforms: true
+  version: '2025-06-18'
+  evidence: >-
+    initialize handshake at https://www.kitopi.com/_api/mcp returned protocolVersion 2025-06-18 and
+    a capabilities object; tools/list returned 9 tools. Probed 2026-07-19.
+- id: jsonrpc-2.0
+  conforms: true
+  evidence: MCP endpoint request and response envelopes carry jsonrpc "2.0" and matching ids.
+- id: llms-txt
+  conforms: true
+  evidence: >-
+    https://www.kitopi.com/llms.txt returns a well-formed llms.txt (H1 name, blockquote summary,
+    sectioned link lists). Control probe of an invented path returned a 400 error page, confirming
+    the file is genuinely published.
+- id: robots-txt
+  conforms: true
+  evidence: https://www.kitopi.com/robots.txt returns a valid robots.txt with Sitemap directives.
+- id: sitemaps-xml
+  conforms: true
+  evidence: https://www.kitopi.com/sitemap.xml returns 200 and is referenced from robots.txt.
+- id: rss-2.0
+  conforms: true
+  evidence: https://www.kitopi.com/blog-feed.xml returns a valid RSS 2.0 channel.
+- id: rfc9116-security-txt
+  conforms: false
+  evidence: /.well-known/security.txt returns the Wix generic 400 error page.
+- id: oauth2
+  conforms: false
+  evidence: No OAuth surface is published; the MCP endpoint requires no credentials.
+- id: openid-connect
+  conforms: false
+  evidence: /.well-known/openid-configuration returns 400.
+- id: openapi
+  conforms: false
+  evidence: No OpenAPI or Swagger description is published by Kitopi.
+- id: asyncapi
+  conforms: false
+  evidence: No event, streaming or webhook surface is published by Kitopi.
+- id: rfc9457-problem-details
+  conforms: false
+  evidence: Errors on the only surface are JSON-RPC 2.0 error objects, not application/problem+json.

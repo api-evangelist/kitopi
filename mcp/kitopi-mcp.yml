@@ -1,0 +1,89 @@
+generated: '2026-07-19'
+method: searched
+source: https://www.kitopi.com/llms.txt
+status: published
+notes: >-
+  Kitopi publishes no first-party product API. The MCP server below is the
+  Wix platform "Site Visitor Assistant" that is exposed on Kitopi's own
+  domain and declared in Kitopi's /llms.txt. It is genuinely reachable and
+  Kitopi-scoped (serverInfo names the Kitopi site), but the tool surface is
+  supplied by the Wix website platform, not authored by Kitopi. Tools below
+  were enumerated live via a JSON-RPC tools/list call on 2026-07-19.
+server:
+  name: Site Visitor Assistant for site "Kitopi"
+  version: 1.0.0
+  transport: http
+  url: https://www.kitopi.com/_api/mcp
+  protocol_version: '2025-06-18'
+  provider: Wix
+  docs: https://dev.wix.com/docs/develop-websites/articles/get-started/about-the-wix-site-mcp
+  authentication: none
+  scope: public site information only
+verification:
+  probed: '2026-07-19'
+  method: JSON-RPC initialize + tools/list over HTTP POST
+  initialize_status: 200
+  capabilities:
+    tools:
+      listChanged: true
+    logging: {}
+  session_header: mcp-session-id
+tools:
+- name: GetBusinessDetails
+  description: Get business and site details for Kitopi such as timezone, email, phone and address.
+  parameters: []
+- name: SearchInSite
+  description: Search the Kitopi site for information.
+  parameters:
+  - searchTerm
+- name: SearchSiteApiDocs
+  description: >-
+    Search the API documentation for the Wix business solutions installed on the Kitopi site and
+    return how to use those APIs. Used for querying products and services.
+  parameters:
+  - searchTerm
+- name: GenerateVisitorToken
+  description: >-
+    Create a new visitor session and obtain an anonymous visitor access token for the Kitopi site.
+    Must be called before any CallWixSiteAPI request.
+  parameters: []
+- name: CallWixSiteAPI
+  description: >-
+    Call API methods on the Kitopi site to perform actions on a visitor's behalf, such as querying
+    site data or starting a purchase.
+  parameters:
+  - visitorToken
+  - url
+  - method
+  - body
+- name: ExecuteWixAPI
+  description: >-
+    Run JavaScript against the Wix REST API on the Kitopi site, on the visitor's behalf.
+  parameters:
+  - code
+  - reason
+  - hasMutations
+  - sourceDocUrls
+  - visitorToken
+- name: BrowseWixRESTDocsMenu
+  description: Browse the Wix REST API documentation menu hierarchy.
+  parameters:
+  - menuUrl
+  - reason
+- name: ReadFullDocsArticle
+  description: Fetch a complete article from the Wix developer documentation portal.
+  parameters:
+  - articleUrl
+- name: ReadFullDocsMethodSchema
+  description: >-
+    Fetch the full request/response schema for a Wix API method. Should be called before invoking
+    that method via CallWixSiteAPI.
+  parameters:
+  - articleUrl
+  - reason
+capabilities_declared:
+- Get business details (contact info, location, hours)
+- Discover products and services on offer
+- Book services and make reservations
+- Start a purchase and be directed to the site to complete checkout
+- Ask questions and get relevant answers without browsing the site

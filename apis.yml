@@ -10,6 +10,17 @@ description: 'Kitopi is a Dubai-headquartered, tech-powered multi-brand restaura
   a brand scale into a new market in roughly 14 days. Kitopi is a SoftBank Vision Fund portfolio
   company. It publishes no public product or partner developer API; its only machine-readable surface
   is a Wix-provided site MCP endpoint and an llms.txt agent-access declaration on www.kitopi.com.'
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: unknown
   onboarding: self-serve

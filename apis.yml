@@ -23,15 +23,16 @@ deliveryModel:
   method: derived
 accessModel:
   pricing: unknown
-  onboarding: self-serve
+  onboarding: unknown
   trial: false
   try_now: false
   public: false
-  label: Self-serve signup
-  confidence: medium
+  label: Unknown
+  confidence: low
   source:
   - authentication
-  generated: '2026-07-22'
+  - security
+  generated: '2026-09-03'
   method: derived
 image: https://static.wixstatic.com/media/eef487_23715ab360904fa2b3be013b50cad3d3%7Emv2.jpg/v1/fit/w_2500,h_1330,al_c/eef487_23715ab360904fa2b3be013b50cad3d3%7Emv2.jpg
 url: https://raw.githubusercontent.com/api-evangelist/kitopi/refs/heads/main/apis.yml

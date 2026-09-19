@@ -49,7 +49,7 @@ tags:
 - Company
 - Consumer
 - Food and Beverage
-- Cloud Kitchens
+- Cloud Kitchen
 - Restaurant
 - Food Delivery
 - Hospitality
@@ -77,6 +77,10 @@ apis:
   humanURL: https://www.kitopi.com/llms.txt
   baseURL: https://www.kitopi.com/_api/mcp
   tags:
+  - MCP
+  - Agents
+  - Websites
+  tags_raw:
   - MCP
   - Agents
   - Website

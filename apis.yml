@@ -89,6 +89,9 @@ apis:
     url: mcp/kitopi-mcp.yml
   - type: LLMsTxt
     url: llms/kitopi-llms.txt
+  x-surface: platform-generated
+  x-platform: wix
+  x-platform-surface: site-mcp
 common:
 - type: DomainSecurity
   url: security/kitopi-domain-security.yml

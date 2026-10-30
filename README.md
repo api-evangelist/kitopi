@@ -64,6 +64,94 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Kitopi is a company surfaced as a portfolio company of softbank-vision-fund and added to the API Evangelist network as a stub for enrichment. Sector: consumer. This profile is a lead awaiting the enrichment pipeline.
+Kitopi is a Dubai-headquartered, tech-powered multi-brand restaurant and cloud kitchen platform that discovers, creates and curates homegrown F&B brands for the MENA region. It operates over 200 restaurant and delivery-only outlets across the UAE, Saudi Arabia, Bahrain, Qatar and Kuwait with more than 6,000 employees, and runs a Global Customer Experience center in Dubai plus a 100-plus person technology hub in Krakow, Poland. Kitopi's differentiator is its in-house Smart Kitchen Operating System (SKOS), a suite of applications that optimizes every aspect of cloud-kitchen operations in real time to maximize throughput and utilization for its restaurant partners, letting a brand scale into a new market in roughly 14 days. Kitopi is a SoftBank Vision Fund portfolio company. It publishes no public product or partner developer API; its only machine-readable surface is a Wix-provided site MCP endpoint and an llms.txt agent-access declaration on www.kitopi.com.
 
-Backed by: softbank-vision-fund
+**Areas:** Company · Consumer · Food and Beverage · Cloud Kitchen · Restaurant · Food Delivery · Hospitality · Middle East · Logistics
+
+## Kitopi on APIs.io
+
+Everything profiled for Kitopi is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/kitopi/](https://apis.io/providers/kitopi/)** — or go straight to one of the APIs or properties below.
+
+### APIs (1)
+
+- [Kitopi Site MCP](https://apis.io/apis/kitopi/site-mcp/) — The Model Context Protocol endpoint that Kitopi's Wix-hosted website exposes for agentic AI access. It is a platform-provided (Wix) site assistant server…
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### MCP servers (1)
+
+Model Context Protocol servers that expose the API to agents.
+
+- [Site Visitor Assistant for site "Kitopi](https://apis.io/servers/kitopi/site-visitor-assistant-for-site-kitopi/)
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Kitopi Authentication](https://apis.io/security/kitopi/kitopi-authentication/)
+- [Kitopi Domain Security](https://apis.io/security/kitopi/kitopi-domain-security/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.kitopi.com/)
+- [Documentation](https://dev.wix.com/docs/develop-websites/articles/get-started/about-the-wix-site-mcp)
+- [Blog](https://www.kitopi.com/blog)
+- [Terms of service](https://www.kitopi.com/terms-conditions)
+- [Privacy policy](https://www.kitopi.com/privacy-policy)
+
+## API Evangelist rating
+
+**Kin Score 21.6** — emerging · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 76.7 |
+| Contract quality | 0.0 |
+| Contract governance | 18.2 |
+| Operational transparency | 0.0 |
+| Developer ergonomics | 30.4 |
+| Access clarity | 21.1 |
+
+**Agent readiness 5.6** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | platform (partial credit) |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | — |
+| Event Surface Described | — |
+| Agent Skills | derived (partial credit) |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 24.5** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/kitopi/](https://apis.io/providers/kitopi/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Kitopi: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/kitopi/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
